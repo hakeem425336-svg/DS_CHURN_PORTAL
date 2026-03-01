@@ -112,7 +112,7 @@ with st.container():
         geography = st.selectbox('🌍 Geography', one_hot_geo.categories_[0])
         gender = st.selectbox('👤 Gender', label_encoder_gender.classes_)
         age = st.slider('🎂 Age', 18, 90, 30)
-        credit_score = st.number_input('💳 Credit Score', 300, 900)
+        credit_score = st.number_input('💳 Credit Score', 0, 900)
 
     with col2:
         balance = st.number_input('💰 Balance', min_value=0.0)
@@ -167,4 +167,5 @@ if predict_button:
         st.markdown(
             f'<div class="result-box success-box">✅ Customer Likely to Stay<br>{prediction_proba:.2%}</div>',
             unsafe_allow_html=True
+
         )
